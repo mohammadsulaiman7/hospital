@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,8 @@ class HomeController extends Controller
         {
             if(Auth::user()->usertype == '0')
             {
-                return view('user.home');
+                $doctors=Doctor::get();
+                return view('user.home',compact('doctors'));
             }
             else 
             return view('admin.home');
@@ -23,6 +25,7 @@ class HomeController extends Controller
         }
     }
     public function index(){
-        return view('user.home');
+        $doctors=Doctor::all();
+        return view('user.home',compact('doctors'));
     }
 }

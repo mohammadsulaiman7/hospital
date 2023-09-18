@@ -18,3 +18,11 @@
 <!-- Custom js for this page -->
 <script src="admin/assets/js/dashboard.js"></script>
 <!-- End custom js for this page -->
+<script>
+    $(document).ready(function(){
+      // Add a timeout function to hide the alert after 2 seconds
+      setTimeout(function(){
+        $("#myAlert").alert('close');
+      }, 4000);
+    });
+    </script>

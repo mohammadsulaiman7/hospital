@@ -7,6 +7,7 @@
 
 <body>
     <div class="container-scroller">
+       
         @include('admin.side')
         @include('admin.nav')
         @yield('content')

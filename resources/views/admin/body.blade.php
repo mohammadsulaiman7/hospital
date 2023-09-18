@@ -1,6 +1,11 @@
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="row">
+        @if (Session::has('success'))
+        <div class="alert alert-info" id="myAlert">
+            {{Session::get('success')}}
+        </div>
+        @endif
         <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
