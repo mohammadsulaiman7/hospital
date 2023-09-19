@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use App\Models\Speciality;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,7 +22,8 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.add-doctor');
+        $specialities=Speciality::all();
+        return view('admin.add-doctor',compact('specialities'));
     }
 
     /**

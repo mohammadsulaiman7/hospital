@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('image')->default('no-image.png');
             $table->string('room_number')->nullable();
-            $table->string('speciality')->nullable();
+            $table->foreignId('speciality_id')->constrained()->onDelete('cascade');
             $table->string('age')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }

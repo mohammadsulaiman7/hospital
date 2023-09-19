@@ -16,22 +16,55 @@
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="number" class="form-control" id="phone" style="color:white" name="phone">
+                <input type="number" class="form-control" ispecialityd="phone" style="color:white" name="phone">
               </div>
               <div class="form-group">
                 <label for="room">Room No :</label>
                 <input type="text" class="form-control" id="room" style="color:white" name="room_number">
               </div>
-              <select class="form-select mb-2 bg-dark" aria-label="Default select example" style="color:white" name="speciality">
+              <select class="form-select mb-2 bg-dark" aria-label="Default select example" style="color:white" name="speciality_id">
                 <option selected disabled>Speciality</option>
-                <option value="1">One</option>
+                @foreach ($specialities as $speciality)
+                <option value="{{$speciality->id}}">{{$speciality->name}}</option>
+                @endforeach
               </select>
               <div class="input-group mb-3 mt-3">
-                <input type="file" class="form-control bg-dark" id="inputGroupFile02" style="color: white" name="image" accept="image/*">
+                <input type="file" class="form-control bg-dark" style="color: white" name="image" accept="image/*">
                 {{-- <label class="input-group-text" for="inputGroupFile02">Upload</label> --}}
               </div>
+              <div class="form-check">
+                <label class="form-check-label" for="check1" style="color:white">
+                <input class="form-check-input" type="checkbox"  id="check1">
+                  Connect with a user ? 
+                </label>
+              </div>
+              <select class="form-select mb-2 bg-dark" aria-label="Default select example" style="color:white;display:none;" name="user_id" id="ss" >
+                <option selected disabled>users</option>
+                @foreach ($users as $user)
+                <option value="{{$user->id}}">{{$user->name}} - {{$user->email}}</option>
+                @endforeach
+              </select>
             <button type="submit" class="btn btn-success w-100 mt-5">Add</button>
           </form>
         </div>
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the checkbox element
+      const checkbox = document.getElementById("check1");
+  
+      // Get the div element to show/hide
+      const hiddenDiv = document.getElementById("ss");
+  
+      // Add an event listener to the checkbox to toggle the div's visibility
+      checkbox.addEventListener("change", function () {
+          if (checkbox.checked) {
+              hiddenDiv.style.display = "block";
+          } else {
+              hiddenDiv.style.display = "none";
+          }
+      });
+    });
+      </script>
+  
     @endsection

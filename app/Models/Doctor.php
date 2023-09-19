@@ -9,4 +9,10 @@ class Doctor extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function speciality(){
+        return $this->belongsTo(Speciality::class,'speciality_id');
+    }
+    public function appointments(){
+        return $this->hasMany(Appointment::class);
+    }
 }

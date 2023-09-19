@@ -16,7 +16,7 @@ class HomeController extends Controller
                 $doctors=Doctor::get();
                 return view('user.home',compact('doctors'));
             }
-            else 
+            else
             return view('admin.home');
         }
         else 

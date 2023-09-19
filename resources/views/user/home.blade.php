@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    @include('user.css')
 </head>
@@ -27,8 +26,11 @@
         @include('user.doctor')
 
         @include('user.latest-news')
-
+        @if (Auth::user()->usertype == '0')
         @include('user.appointment')
+        @else
+            
+        @endif
 
         <!-- .banner-home -->
 
