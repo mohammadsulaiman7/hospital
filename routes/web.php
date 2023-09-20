@@ -32,4 +32,5 @@ Route::middleware([
     Route::resource('doctors', DoctorController::class);
     Route::resource('speciality',SpecialityController::class);
     Route::resource('appointments',AppointmentController::class);
+    Route::get('/get-values/{selectedValue}',[HomeController::class,'getValue']);
 });

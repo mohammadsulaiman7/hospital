@@ -6,7 +6,7 @@
             {{Session::get('success')}}
         </div>
         @endif
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        {{-- <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -25,8 +25,8 @@
               <h6 class="text-muted font-weight-normal">Potential growth</h6>
             </div>
           </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -45,8 +45,8 @@
               <h6 class="text-muted font-weight-normal">Revenue current</h6>
             </div>
           </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <div class="row">
@@ -65,7 +65,7 @@
               <h6 class="text-muted font-weight-normal">Daily Income</h6>
             </div>
           </div>
-        </div>
+        </div> --}}
         <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
@@ -87,6 +87,11 @@
           </div>
         </div>
       </div>
+
+
+      {{-- Transaction History --}}
+
+
       <div class="row">
         <div class="col-md-4 grid-margin stretch-card">
           <div class="card">
@@ -116,6 +121,8 @@
         </div>
         <div class="col-md-8 grid-margin stretch-card">
           <div class="card">
+
+            {{-- Open projects  --}}
             <div class="card-body">
               <div class="d-flex flex-row justify-content-between">
                 <h4 class="card-title mb-1">Open Projects</h4>
@@ -124,7 +131,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="preview-list">
-                    <div class="preview-item border-bottom">
+                    {{-- <div class="preview-item border-bottom">
                       <div class="preview-thumbnail">
                         <div class="preview-icon bg-primary">
                           <i class="mdi mdi-file-document"></i>
@@ -140,8 +147,8 @@
                           <p class="text-muted mb-0">30 tasks, 5 issues </p>
                         </div>
                       </div>
-                    </div>
-                    <div class="preview-item border-bottom">
+                    </div> --}}
+                    {{-- <div class="preview-item border-bottom">
                       <div class="preview-thumbnail">
                         <div class="preview-icon bg-success">
                           <i class="mdi mdi-cloud-download"></i>
@@ -157,8 +164,8 @@
                           <p class="text-muted mb-0">23 tasks, 5 issues </p>
                         </div>
                       </div>
-                    </div>
-                    <div class="preview-item border-bottom">
+                    </div> --}}
+                    {{-- <div class="preview-item border-bottom">
                       <div class="preview-thumbnail">
                         <div class="preview-icon bg-info">
                           <i class="mdi mdi-clock"></i>
@@ -174,8 +181,8 @@
                           <p class="text-muted mb-0">15 tasks, 2 issues</p>
                         </div>
                       </div>
-                    </div>
-                    <div class="preview-item border-bottom">
+                    </div> --}}
+                    {{-- <div class="preview-item border-bottom">
                       <div class="preview-thumbnail">
                         <div class="preview-icon bg-danger">
                           <i class="mdi mdi-email-open"></i>
@@ -191,7 +198,7 @@
                           <p class="text-muted mb-0">35 tasks, 7 issues </p>
                         </div>
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="preview-item">
                       <div class="preview-thumbnail">
                         <div class="preview-icon bg-warning">
@@ -213,24 +220,27 @@
                 </div>
               </div>
             </div>
+            {{--End  Open projects  --}}
           </div>
         </div>
       </div>
+
+
       <div class="row">
         <div class="col-sm-4 grid-margin">
           <div class="card">
             <div class="card-body">
-              <h5>Revenue</h5>
+              <h5>Clinics</h5>
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">$32123</h2>
+                    <h2 class="mb-0">$1212.12</h2>
                     <p class="text-success ms-2 mb-0 font-weight-medium">+3.5%</p>
                   </div>
                   <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
                 </div>
                 <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i class="icon-lg mdi mdi-codepen text-primary ms-auto"></i>
+                  <i class="icon-lg mdi mdi-hospital text-danger ms-auto"></i>
                 </div>
               </div>
             </div>
@@ -239,7 +249,7 @@
         <div class="col-sm-4 grid-margin">
           <div class="card">
             <div class="card-body">
-              <h5>Sales</h5>
+              <h5>Pharmacy</h5>
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
@@ -249,7 +259,7 @@
                   <h6 class="text-muted font-weight-normal"> 9.61% Since last month</h6>
                 </div>
                 <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i class="icon-lg mdi mdi-wallet-travel text-danger ms-auto"></i>
+                  <i class="icon-lg mdi mdi-wallet-travel text-info ms-auto"></i>
                 </div>
               </div>
             </div>
@@ -258,7 +268,7 @@
         <div class="col-sm-4 grid-margin">
           <div class="card">
             <div class="card-body">
-              <h5>Purchase</h5>
+              <h5>surgeries</h5>
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
@@ -268,18 +278,19 @@
                   <h6 class="text-muted font-weight-normal">2.27% Since last month</h6>
                 </div>
                 <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                  <i class="icon-lg mdi mdi-monitor text-success ms-auto"></i>
+                  <i class="icon-lg mdi mdi-doctor text-success ms-auto"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {{-- Clients  --}}
       <div class="row ">
         <div class="col-12 grid-margin">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Order Status</h4>
+              <h4 class="card-title">Patients</h4>
               <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -292,15 +303,23 @@
                         </div>
                       </th>
                       <th> Client Name </th>
-                      <th> Order No </th>
-                      <th> Product Cost </th>
-                      <th> Project </th>
-                      <th> Payment Mode </th>
-                      <th> Start Date </th>
-                      <th> Payment Status </th>
+                      <th>Phone</th>
+                      <th>Address</th>
+                      <th>Start date</th>
+                      <th>Appointment count</th>
+                      {{-- <th> Product Cost </th> --}}
+                      {{-- <th> Project </th> --}}
+                      {{-- <th> Payment Mode </th> --}}
+                      {{-- <th> Start Date </th> --}}
+                      {{-- <th> Payment Status </th> --}}
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($users as $user)
+                    @if ($user->usertype == '1')
+                        
+                    @else
+                        
                     <tr>
                       <td>
                         <div class="form-check form-check-muted m-0">
@@ -310,102 +329,21 @@
                         </div>
                       </td>
                       <td>
-                        <img src="assets/images/faces/face1.jpg" alt="image" />
-                        <span class="ps-2">Henry Klein</span>
+                        <img src="{{asset('storage/profiles/'.$user->profile)}}" alt="image" />
+                        <span class="ps-2">{{$user->name}}</span>
                       </td>
-                      <td> 02312 </td>
-                      <td> $14,500 </td>
-                      <td> Dashboard </td>
-                      <td> Credit card </td>
-                      <td> 04 Dec 2019 </td>
+                      <td>{{$user->phone}}</td>
+                      <td>{{$user->address}}</td>
+                      <td>{{$user->created_at}}</td>
+                      <td>{{$user->appointments->count()}}</td>
+                      {{-- <td> 04 Dec 2019 </td> --}}
                       <td>
                         <div class="badge badge-outline-success">Approved</div>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-muted m-0">
-                          <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                          </label>
-                        </div>
-                      </td>
-                      <td>
-                        <img src="assets/images/faces/face2.jpg" alt="image" />
-                        <span class="ps-2">Estella Bryan</span>
-                      </td>
-                      <td> 02312 </td>
-                      <td> $14,500 </td>
-                      <td> Website </td>
-                      <td> Cash on delivered </td>
-                      <td> 04 Dec 2019 </td>
-                      <td>
-                        <div class="badge badge-outline-warning">Pending</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-muted m-0">
-                          <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                          </label>
-                        </div>
-                      </td>
-                      <td>
-                        <img src="assets/images/faces/face5.jpg" alt="image" />
-                        <span class="ps-2">Lucy Abbott</span>
-                      </td>
-                      <td> 02312 </td>
-                      <td> $14,500 </td>
-                      <td> App design </td>
-                      <td> Credit card </td>
-                      <td> 04 Dec 2019 </td>
-                      <td>
-                        <div class="badge badge-outline-danger">Rejected</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-muted m-0">
-                          <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                          </label>
-                        </div>
-                      </td>
-                      <td>
-                        <img src="assets/images/faces/face3.jpg" alt="image" />
-                        <span class="ps-2">Peter Gill</span>
-                      </td>
-                      <td> 02312 </td>
-                      <td> $14,500 </td>
-                      <td> Development </td>
-                      <td> Online Payment </td>
-                      <td> 04 Dec 2019 </td>
-                      <td>
-                        <div class="badge badge-outline-success">Approved</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check form-check-muted m-0">
-                          <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input">
-                          </label>
-                        </div>
-                      </td>
-                      <td>
-                        <img src="assets/images/faces/face4.jpg" alt="image" />
-                        <span class="ps-2">Sallie Reyes</span>
-                      </td>
-                      <td> 02312 </td>
-                      <td> $14,500 </td>
-                      <td> Website </td>
-                      <td> Credit card </td>
-                      <td> 04 Dec 2019 </td>
-                      <td>
-                        <div class="badge badge-outline-success">Approved</div>
-                      </td>
-                    </tr>
+                    @endif
+
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -413,7 +351,14 @@
           </div>
         </div>
       </div>
+
+
+      {{-- End clients  --}}
+
+
       <div class="row">
+      {{-- Messages  --}}
+
         <div class="col-md-6 col-xl-4 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
@@ -424,49 +369,7 @@
               <div class="preview-list">
                 <div class="preview-item border-bottom">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face6.jpg" alt="image" class="rounded-circle" />
-                  </div>
-                  <div class="preview-item-content d-flex flex-grow">
-                    <div class="flex-grow">
-                      <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                        <h6 class="preview-subject">Leonard</h6>
-                        <p class="text-muted text-small">5 minutes ago</p>
-                      </div>
-                      <p class="text-muted">Well, it seems to be working now.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="preview-item border-bottom">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face8.jpg" alt="image" class="rounded-circle" />
-                  </div>
-                  <div class="preview-item-content d-flex flex-grow">
-                    <div class="flex-grow">
-                      <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                        <h6 class="preview-subject">Luella Mills</h6>
-                        <p class="text-muted text-small">10 Minutes Ago</p>
-                      </div>
-                      <p class="text-muted">Well, it seems to be working now.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="preview-item border-bottom">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face9.jpg" alt="image" class="rounded-circle" />
-                  </div>
-                  <div class="preview-item-content d-flex flex-grow">
-                    <div class="flex-grow">
-                      <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                        <h6 class="preview-subject">Ethel Kelly</h6>
-                        <p class="text-muted text-small">2 Hours Ago</p>
-                      </div>
-                      <p class="text-muted">Please review the tickets</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="preview-item border-bottom">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face11.jpg" alt="image" class="rounded-circle" />
+                    <img src="" alt="" class="rounded-circle" />
                   </div>
                   <div class="preview-item-content d-flex flex-grow">
                     <div class="flex-grow">
@@ -482,46 +385,47 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Portfolio Slide</h4>
-              <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
-                <div class="item">
-                  <img src="assets/images/dashboard/Rectangle.jpg" alt="">
+        {{-- End messages  --}}
+          {{-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Portfolio Slide</h4>
+                <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
+                  <div class="item">
+                    <img src="assets/images/dashboard/Rectangle.jpg" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="assets/images/dashboard/Img_5.jpg" alt="">
+                  </div>
+                  <div class="item">
+                    <img src="assets/images/dashboard/img_6.jpg" alt="">
+                  </div>
                 </div>
-                <div class="item">
-                  <img src="assets/images/dashboard/Img_5.jpg" alt="">
-                </div>
-                <div class="item">
-                  <img src="assets/images/dashboard/img_6.jpg" alt="">
-                </div>
-              </div>
-              <div class="d-flex py-4">
-                <div class="preview-list w-100">
-                  <div class="preview-item p-0">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face12.jpg" class="rounded-circle" alt="">
-                    </div>
-                    <div class="preview-item-content d-flex flex-grow">
-                      <div class="flex-grow">
-                        <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                          <h6 class="preview-subject">CeeCee Bass</h6>
-                          <p class="text-muted text-small">4 Hours Ago</p>
+                <div class="d-flex py-4">
+                  <div class="preview-list w-100">
+                    <div class="preview-item p-0">
+                      <div class="preview-thumbnail">
+                        <img src="assets/images/faces/face12.jpg" class="rounded-circle" alt="">
+                      </div>
+                      <div class="preview-item-content d-flex flex-grow">
+                        <div class="flex-grow">
+                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                            <h6 class="preview-subject">CeeCee Bass</h6>
+                            <p class="text-muted text-small">4 Hours Ago</p>
+                          </div>
+                          <p class="text-muted">Well, it seems to be working now.</p>
                         </div>
-                        <p class="text-muted">Well, it seems to be working now.</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <p class="text-muted">Well, it seems to be working now. </p>
-              <div class="progress progress-md portfolio-progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <p class="text-muted">Well, it seems to be working now. </p>
+                <div class="progress progress-md portfolio-progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div> --}}
         @include('admin.todo')
       </div>
       <div class="row">

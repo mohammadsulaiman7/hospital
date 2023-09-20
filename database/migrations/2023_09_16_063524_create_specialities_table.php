@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('specialities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->decimal('cost',6,2);
             $table->timestamps();
         });
     }

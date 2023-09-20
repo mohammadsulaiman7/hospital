@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->timestamp('date',0);
             $table->foreignId('doctor_id')->constrained();
             $table->boolean('status')->default(false);
             $table->text('message')->nullable();

@@ -9,6 +9,10 @@
               <label for="name">Name</label>
               <input type="text" class="form-control" id="name" aria-describedby="emailHelp" style="color:white" name="name">
             </div>
+            <div class="form-group">
+              <label for="cost">Cost</label>
+              <input type="text" class="form-control" id="cost" aria-describedby="emailHelp" style="color:white" name="cost">
+            </div>
             <button type="submit" class="btn btn-success w-100 mt-5">Add</button>
           </form>
         </div>

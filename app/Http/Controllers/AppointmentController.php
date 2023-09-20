@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -27,7 +28,7 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $appointment=Appointment::create($request->all());
+        $appointment=Appointment::create($request->all() + ['user_id' => Auth::user()->id]);
         if($appointment->save)
         {
             return redirect()->route('home')->with('success','appointment successfult');
