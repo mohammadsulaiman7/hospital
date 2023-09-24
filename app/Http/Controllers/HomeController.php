@@ -17,14 +17,14 @@ class HomeController extends Controller
             if (Auth::user()->usertype == '0') {
                 $doctors = Doctor::get();
                 $specialities = Speciality::all();
-                return view('user.home', compact('doctors','specialities'));
+                return view('user.home', compact('doctors', 'specialities'));
             } else {
-                $users=User::all();
-                $appointments=Appointment::all();
-                return view('admin.home',compact('users','appointments'));
+                $users = User::all();
+                $appointments = Appointment::all();
+                return view('admin.home', compact('users', 'appointments'));
             }
         } else {
-           
+
             return redirect()->back();
         }
     }
@@ -32,13 +32,13 @@ class HomeController extends Controller
     {
         $doctors = Doctor::all();
         $specialities = Speciality::all();
-        return view('user.home', compact('doctors','specialities'));
+        return view('user.home', compact('doctors', 'specialities'));
     }
     public function getValues($selectedValue)
-{
-    // Fetch data from the model based on $selectedValue
-    $data = Doctor::where('speciality_id', $selectedValue)->get();
-    return response()->json($data);
-}
+    {
+        // Fetch data from the model based on $selectedValue
+        $data = Doctor::where('speciality_id', $selectedValue)->get();
+        return response()->json($data);
+    }
 
 }

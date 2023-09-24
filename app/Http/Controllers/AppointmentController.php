@@ -13,8 +13,14 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointment=Appointment::all();
-        return view('admin.appointment-list',compact('appointment'));
+        if (Auth::user()->usertype == '1') {
+            $appointments = Appointment::all();
+            return view('admin.appointment-list', compact('appointments'));
+        } else {
+            $userId=Auth::user()->id;
+            $appointments = Appointment::where('user_id',$userId)->get();
+            return view('user.view-appointments', compact('appointments'));
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -28,13 +34,11 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $appointment=Appointment::create($request->all() + ['user_id' => Auth::user()->id]);
-        if($appointment->save)
-        {
-            return redirect()->route('home')->with('success','appointment successfult');
-        }
-        else 
-        return back()->with('error','there is something wrong , try again please');
+        $appointment = Appointment::create($request->all() + ['user_id' => Auth::user()->id]);
+        if ($appointment->save) {
+            return redirect()->route('home')->with('success', 'Appointment successfuly');
+        } else
+            return back()->with('error', 'There is something wrong , try again please');
     }
 
     /**
@@ -66,6 +70,9 @@ class AppointmentController extends Controller
      */
     public function destroy(Appointment $appointment)
     {
-        //
+        if($appointment->delete())
+        return back()->with('success','Appointment canceled successfuly');
+        else 
+        return back()->with('error','Error in canceled appointment');
     }
 }

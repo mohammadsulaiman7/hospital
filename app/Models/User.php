@@ -17,7 +17,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -62,5 +62,8 @@ class User extends Authenticatable
     ];
     public function appointments(){
         return $this->hasMany(Appointment::class);
+    }
+    public function doctor(){
+        return $this->hasOne('doctor');
     }
 }

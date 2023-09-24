@@ -359,7 +359,7 @@
       <div class="row">
       {{-- Messages  --}}
 
-        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+        {{-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <div class="d-flex flex-row justify-content-between">
@@ -384,8 +384,14 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
+
+
+
         {{-- End messages  --}}
+
+
+        
           {{-- <div class="col-md-6 col-xl-4 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">

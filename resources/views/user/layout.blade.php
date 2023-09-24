@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   @include('user.css')
+    @include('user.css')
 </head>
 
 <body>
@@ -11,38 +11,22 @@
     <div class="back-to-top"></div>
 
     @include('user.header')
-
-    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
-        <div class="hero-section">
-            <div class="container text-center wow zoomIn">
-                <span class="subhead">Let's make your life happier</span>
-                <h1 class="display-4">Healthy Living</h1>
-                <a href="#" class="btn btn-primary">Let's Consult</a>
-            </div>
-        </div>
+    <div style="min-height: 47vh">
+        @yield('content')
     </div>
+    @include('user.footer')
 
-        @include('user.cards')
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
 
-        @include('user.doctor')
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-        @include('user.latest-news')
+    <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
 
-        @include('user.appointment')
+    <script src="../assets/vendor/wow/wow.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <!-- .banner-home -->
-
-       @include('user.footer')
-
-        <script src="../assets/js/jquery-3.5.1.min.js"></script>
-
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-        <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-        <script src="../assets/vendor/wow/wow.min.js"></script>
-
-        <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/theme.js"></script>
 
 </body>
 

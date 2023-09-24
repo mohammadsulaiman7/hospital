@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(CreateAdmin::class);
+        $this->call(CreateSpecialitySeeder::class);
+        $this->call(CreateDoctorSeeder::class);
+        $this->call(CreateAppointmentSeeder::class);
     }
 }

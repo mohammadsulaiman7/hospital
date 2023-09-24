@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function addDoctor(){
         $specialities=Speciality::all();
-        $users=User::all();
+        $users=User::with('doctor');
         return view('admin.add-doctor',compact('specialities','users'));
     }
 }

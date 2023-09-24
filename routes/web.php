@@ -26,7 +26,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index'])->name('/');
     Route::get('home', [HomeController::class, 'redirect'])->name('home');
     Route::get('add_doctor', [AdminController::class, 'addDoctor']);
     Route::resource('doctors', DoctorController::class);

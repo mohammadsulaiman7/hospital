@@ -41,7 +41,11 @@
               <select class="form-select mb-2 bg-dark" aria-label="Default select example" style="color:white;display:none;" name="user_id" id="ss" >
                 <option selected disabled>users</option>
                 @foreach ($users as $user)
+                @if($user->doctor->isEmpty())
                 <option value="{{$user->id}}">{{$user->name}} - {{$user->email}}</option>
+                @else
+                
+                @endif
                 @endforeach
               </select>
             <button type="submit" class="btn btn-success w-100 mt-5">Add</button>
@@ -52,7 +56,7 @@
     document.addEventListener("DOMContentLoaded", function () {
       // Get the checkbox element
       const checkbox = document.getElementById("check1");
-  
+      
       // Get the div element to show/hide
       const hiddenDiv = document.getElementById("ss");
   

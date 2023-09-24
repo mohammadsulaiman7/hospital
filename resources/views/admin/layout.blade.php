@@ -13,5 +13,4 @@
     </div>
     @include('admin.js')
 </body>
-
 </html>

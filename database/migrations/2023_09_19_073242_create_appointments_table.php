@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamp('date',0);
             $table->foreignId('doctor_id')->constrained();
             $table->boolean('status')->default(false);
+            $table->boolean('approve')->default(true);
             $table->text('message')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
