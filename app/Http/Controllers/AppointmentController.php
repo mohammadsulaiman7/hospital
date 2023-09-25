@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Doctor;
+use App\Models\Speciality;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +16,7 @@ class AppointmentController extends Controller
     public function index()
     {
         if (Auth::user()->usertype == '1') {
-            $appointments = Appointment::all();
+            $appointments = Appointment::paginate(10);
             return view('admin.appointment-list', compact('appointments'));
         } else {
             $userId=Auth::user()->id;
@@ -34,7 +36,9 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $appointment = Appointment::create($request->all() + ['user_id' => Auth::user()->id]);
+        $doctors=Doctor::where('speciality_id',$request->speciality_id)->get();
+        $doctor=$doctors->random();
+        $appointment = Appointment::create($request->all() + ['user_id' => Auth::user()->id , 'doctor_id' => $doctor->id]);
         if ($appointment->save) {
             return redirect()->route('home')->with('success', 'Appointment successfuly');
         } else

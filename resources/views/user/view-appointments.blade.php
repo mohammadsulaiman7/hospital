@@ -9,6 +9,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Doctor name</th>
                         <th scope="col">Date</th>
+                        <th scope="col">Start date</th>
                         <th scope="col">Message</th>
                         <th scope="col">Status</th>
                         <th scope="col"></th>
@@ -21,16 +22,18 @@
                             <th scope="row">{{ ++$i }}</th>
                             <td>{{ $appointment->doctor->name }}</td>
                             <td>{{ $appointment->date }}</td>
+                            <td>{{ $appointment->start_date }}</td>
                             <td>{{ $appointment->message }}</td>
                             <td class="{{ $appointment->status ? 'text-success' : 'text-danger' }}">
                                 {{ $appointment->status ? 'Completed' : 'Padding' }}</td>
-                                <td>
-                                    <form action="{{route('appointments.destroy',$appointment)}}" method="POST">
+                            <td>
+                                <form action="{{ route('appointments.destroy', $appointment) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">Cancel</button>
-                                    </form>
-                                    {{-- <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                    <button type="submit" class="btn btn-outline-danger" data-toggle="modal"
+                                        data-target="#deleteModal">Cancel</button>
+                                </form>
+                                {{-- <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -49,7 +52,7 @@
                                             </div>
                                         </div>
                                     </div>                                     --}}
-                                </td>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -75,6 +78,4 @@
             });
         });
     </script> --}}
-    
-    
 @endsection

@@ -8,15 +8,23 @@
                     <input type="date" class="form-control" name="date" min="{{now()->format('Y-m-d')}}" required>
                 </div>
                 <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
-                    <select name="doctor_id" id="select1" class="custom-select" required>
-                        <option value="general" disabled selected>Speciality</option>
-                        @foreach ($doctors as $doctor)
-                            <option value="{{ $doctor->id }}">{{ $doctor->name }} </option>
+                    <select name="speciality_id" id="select1" class="custom-select" required>
+                        <option value="general" disabled selected>Specialities</option>
+                        @foreach ($specialities as $specialty)
+                        @if($specialty->doctors->count() > 0)
+                            <option value="{{ $specialty->id }}">{{ $specialty->name }}  -- {{$specialty->cost}} <span class="text-success">$</span></option>
+                            @else 
+                            <option value="{{ $specialty->id }}" disabled>{{ $specialty->name }}  -- {{$specialty->cost}} <span class="text-success">$</span></option>
+                            @endif
                         @endforeach
-                        {{-- <option value="cardiology">Cardiology</option>
-                        <option value="dental">Dental</option>
-                        <option value="neurology">Neurology</option>
-                        <option value="orthopaedics">Orthopaedics</option> --}}
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+                    <select name="start_date" class="custom-select" required>
+                        <option value="general" disabled selected>Start date</option>
+                        @foreach ($times as $time)
+                            <option @selected(old('start_time' == $time))>{{ $time }} </option>
+                        @endforeach
                     </select>
                 </div>
                 {{-- <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms" style="display:none" id="select2-container">

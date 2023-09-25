@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\User;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 
@@ -21,8 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(CreateAdmin::class);
+        // User::factory(40)->create();
         $this->call(CreateSpecialitySeeder::class);
         $this->call(CreateDoctorSeeder::class);
-        $this->call(CreateAppointmentSeeder::class);
+        // $this->call(CreateAppointmentSeeder::class);
     }
 }

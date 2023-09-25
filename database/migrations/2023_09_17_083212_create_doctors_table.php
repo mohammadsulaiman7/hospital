@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('room_number')->nullable();
             $table->foreignId('speciality_id')->constrained()->onDelete('cascade');
             $table->string('age')->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->nullable();
             $table->timestamps();
         });
     }

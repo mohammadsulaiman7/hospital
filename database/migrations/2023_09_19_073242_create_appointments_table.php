@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('date',0);
+            $table->date('date');
             $table->foreignId('doctor_id')->constrained();
+            $table->foreignId('speciality_id')->constrained();
             $table->boolean('status')->default(false);
-            $table->boolean('approve')->default(true);
             $table->text('message')->nullable();
+            $table->time('start_date');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

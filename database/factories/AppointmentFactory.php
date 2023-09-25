@@ -20,9 +20,10 @@ class AppointmentFactory extends Factory
     {
         return [
             'date'=>$this->faker->date(),
+            'start_date'=>$this->faker->time(),
             'doctor_id'=>'1',
+            'speciality_id'=>'1',
             'status'=>$this->faker->boolean(),
-            'approve'=>$this->faker->boolean(),
             'user_id'=>'1',
         ];
     }

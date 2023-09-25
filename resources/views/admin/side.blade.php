@@ -1,7 +1,9 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-      <a class="sidebar-brand brand-logo" href="#"><img src="{{asset('images/icon.png')}}" alt="logo" /></a>
-      <a class="sidebar-brand brand-logo-mini" href="#"><img src="{{asset('images/icon.png')}}" alt="logo" /></a>
+      {{-- <a class="sidebar-brand brand-logo" href="#"><img src="{{asset('images/icon.png')}}" alt="logo" /></a>
+      <a class="sidebar-brand brand-logo-mini" href="#"><img src="{{asset('images/icon.png')}}" alt="logo" /></a> --}}
+      <a class="sidebar-brand brand-logo text-decoration-none " href="{{route('home')}}"><span class="text-success">Qamishlo</span><span class="text-white">-</span><span class="text-success">Hospital</span></a>
+      <a class="sidebar-brand brand-logo-mini" href="#"><span class="text-white"></span><span class="text-success"></span></a>
     </div>
     <ul class="nav">
       <li class="nav-item profile">
@@ -57,7 +59,7 @@
         <span class="nav-link">Navigation</span>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="home">
+        <a class="nav-link" href="{{route('home')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
@@ -65,7 +67,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="{{url('add_doctor')}}">
+        <a class="nav-link" href="{{route('doctors.create')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
