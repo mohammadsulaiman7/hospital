@@ -51,21 +51,21 @@
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{route('home')}}">
           <span class="menu-icon">
-            <i class="mdi mdi-file-document-box"></i>
+            <i class="mdi mdi-headphones-settings"></i>
           </span>
           <span class="menu-title">Home</span>
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="{{route('doctors.create')}}">
+        <a class="nav-link" href="{{route('doctors.index')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
-          <span class="menu-title">Add doctors</span>
+          <span class="menu-title">Create doctor</span>
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="{{route('create-admin')}}">
+        <a class="nav-link" href="#">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
@@ -73,11 +73,11 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="{{route('speciality.create')}}">
+        <a class="nav-link" href="{{route('specialities.index')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
-          <span class="menu-title">Add new speciality</span>
+          <span class="menu-title">Create speciality</span>
         </a>
       </li>
       <li class="nav-item menu-items">
@@ -89,7 +89,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('news.index')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>

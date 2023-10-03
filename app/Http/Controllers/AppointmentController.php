@@ -6,6 +6,7 @@ use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\User;
 use App\Notifications\Appointment as NotificationsAppointment;
+use App\Notifications\NewAppointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
@@ -19,7 +20,7 @@ class AppointmentController extends Controller
     {
         if (Auth::user()->usertype == '1') {
             $appointments = Appointment::paginate(10);
-            return view('dashboard.appointments.index', compact('appointments'));
+            return view('dashboard.appointments.show', compact('appointments'));
         } else {
             $userId = Auth::user()->id;
             $appointments = Appointment::where('user_id', $userId)->get();
@@ -41,7 +42,7 @@ class AppointmentController extends Controller
         if ($appointment->save) {
             $users = User::all();
             // User::all()->notify(new NotificationsAppointment($appointment));
-            Notification::send($users, new NotificationsAppointment($appointment));
+            Notification::send($users, new NewAppointment($appointment));
             return redirect()->route('home')->with('success', 'Appointment successfuly');
         } else
             return back()->with('error', 'There is something wrong , try again please');

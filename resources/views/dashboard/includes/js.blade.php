@@ -27,3 +27,36 @@
     });
     </script>
     
+<script>
+  $( '#prepend-text-multiple-field' ).select2( {
+      theme: "bootstrap-5",
+      width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+      placeholder: $( this ).data( 'placeholder' ),
+      closeOnSelect: false,
+  } );
+  // Get references to the input and image elements
+  const fileInput = document.getElementById('image');
+  const previewImage = document.getElementById('previewImage');
+  
+  // Add an event listener to the file input
+  fileInput.addEventListener('change', function () {
+      // Check if a file is selected
+      if (fileInput.files && fileInput.files[0]) {
+          // Create a FileReader object
+          const reader = new FileReader();
+  
+          // Set up the onload event handler
+          reader.onload = function (e) {
+              // Set the src attribute of the image element to the loaded data URL
+              previewImage.src = e.target.result;
+              // Display the image
+              previewImage.style.display = 'block';
+          };
+  
+          // Read the selected file as a Data URL
+          reader.readAsDataURL(fileInput.files[0]);
+      }
+  });
+  
+  </script>
+  

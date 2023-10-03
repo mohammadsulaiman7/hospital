@@ -3,6 +3,9 @@
 
 <head>
     @include('dashboard.includes.css')
+    <style>
+        color:white;
+    </style>
 </head>
 
 <body>

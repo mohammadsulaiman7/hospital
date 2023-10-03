@@ -23,6 +23,7 @@ class DoctorFactory extends Factory
             'name' =>$this->faker->name,
             'phone' =>$this->faker->phoneNumber(),
             'speciality_id'=> rand(1,5),
+            'user_id'=> rand(1,40),
         ];
     }
 }

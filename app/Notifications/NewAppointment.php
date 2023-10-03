@@ -7,17 +7,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class Appointment extends Notification
+class NewAppointment extends Notification
 {
     use Queueable;
 
     /**
      * Create a new notification instance.
      */
-    protected $notification;
-    public function __construct($notification)
+    protected $appointment;
+    public function __construct($appointment)
     {
-        $this->notification=$notification;
+        $this->appointment=$appointment;
     }
 
     /**
@@ -29,6 +29,8 @@ class Appointment extends Notification
     {
         return ['database'];
     }
+
+
     /**
      * Get the array representation of the notification.
      *
@@ -37,10 +39,7 @@ class Appointment extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'approved' => $this->notification->status,
-            'date' => $this->notification->date,
-            'start_date' => $this->notification->start_date,
-            'doctor' => $this->notification->doctor->name,
+            'date' => $this->appointment->date,
         ];
     }
 }

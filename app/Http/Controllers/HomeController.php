@@ -32,10 +32,10 @@ class HomeController extends Controller
             }
             return view('user.home', compact('doctors', 'specialities','times'));
         } else {
-            $doctors=Doctor::paginate(6);
-            $users = User::paginate(5);
-            $appointments = Appointment::paginate(10);
-            $specialities = Speciality::with('appointments')->paginate(10);
+            $doctors=Doctor::all();
+            $users = User::all();
+            $appointments = Appointment::all();
+            $specialities = Speciality::with('appointments')->get();
             return view('dashboard.home', compact('users', 'appointments','specialities','doctors'));
         }
     }

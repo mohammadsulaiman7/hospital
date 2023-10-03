@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   @include('user.css')
+   @include('user.includes.css')
 </head>
 
 <body>
@@ -9,7 +9,7 @@
     <!-- Back to top button -->
     <div class="back-to-top"></div>
 
-    @include('user.header')
+    @include('user.includes.header')
 
     <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
         <div class="hero-section">
@@ -21,20 +21,20 @@
         </div>
     </div>
 
-        @include('user.cards')
+        @include('user.includes.cards')
 
-        @include('user.doctor')
+        @include('user.includes.doctor')
 
-        @include('user.latest-news')
+        @include('user.includes.latest-news')
         @if (Auth::user()->usertype == '0')
-        @include('user.appointment')
+        @include('user.includes.appointment')
         @else
             
         @endif
 
         <!-- .banner-home -->
 
-       @include('user.footer')
+       @include('user.includes.footer')
 
         <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

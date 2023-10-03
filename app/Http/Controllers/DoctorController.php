@@ -15,7 +15,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        
+        $specialities=Speciality::all();
+        return view('dashboard.doctors.create', compact('specialities'));
     }
     
     /**
