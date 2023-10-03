@@ -42,16 +42,6 @@
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item preview-item">
-              <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
-                  <i class="mdi mdi-calendar-today text-success"></i>
-                </div>
-              </div>
-              <div class="preview-item-content">
-                <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-              </div>
-            </a>
           </div>
         </div>
       </li>
@@ -75,7 +65,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('create-admin')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>

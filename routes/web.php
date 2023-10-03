@@ -5,8 +5,6 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SpecialityController;
-use App\Models\Appointment;
-use App\Models\Speciality;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,8 +32,12 @@ Route::middleware([
     Route::resource('speciality',SpecialityController::class);
     Route::resource('appointments',AppointmentController::class);
     Route::get('/get-values/{selectedValue}',[HomeController::class,'getValue']);
+    Route::post('create-admin',[AdminController::class,'create'])->name('create-admin');
     Route::get('approve',[AppointmentController::class,'approve']);
-    Route::get('s',function (){
-      return now();
-    });
+    // Route::get('s',function (){
+    //   return now();
+    // });
+    // Route::get('view-register',function (){
+    //     return view('auth.register');
+    //   })->name('view-register');
 });

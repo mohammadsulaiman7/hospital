@@ -55,4 +55,4 @@
     </div>
   </div>
 
-  {!!$users->links() !!}
+  {!!$users->links() !!}s

@@ -17,15 +17,14 @@ class DoctorController extends Controller
     {
         
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
         $specialities=Speciality::all();
-        // $users=User::all();
-        return view('admin.add-doctor',compact('specialities'));
+        return view('dashboard.doctors.create',compact('specialities'));
     }
 
     /**
@@ -34,19 +33,18 @@ class DoctorController extends Controller
 
     public function store(Request $request)
     {
-        $doctor =Doctor::create($request->all());
+        $doctor =Doctor::create($request->all() + ['user_id' => '1']);
         if($request->hasFile('image'))
         {
             $image=$request->file('image');
             $imageName=time() . '.' .$image->extension();
-            // dd($imageName);
             $image->storeAs('public/doctors',$imageName);
             $doctor->image=$imageName;
         }
         if ($doctor->save()) {
             return redirect()->route('home')->with('success','Adding doctor successfuly');
         }
-        else 
+        else
         return back()->with('error','error in adding doctor');
     }
 

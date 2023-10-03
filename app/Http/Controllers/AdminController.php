@@ -8,5 +8,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    
+    public function create(){
+        return view('dashboard.admins.create');
+    }
+    public function store(Request $request){
+        
+    }
 }

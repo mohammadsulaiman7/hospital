@@ -1,4 +1,4 @@
-{{-- TODO LIST --}}
+{{-- Appointments --}}
 <div class="col-md-14 col-xl-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">

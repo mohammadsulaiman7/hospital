@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Doctor;
-use App\Models\Speciality;
+use App\Models\User;
+use App\Notifications\Appointment as NotificationsAppointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 
 class AppointmentController extends Controller
 {
@@ -17,29 +19,29 @@ class AppointmentController extends Controller
     {
         if (Auth::user()->usertype == '1') {
             $appointments = Appointment::paginate(10);
-            return view('admin.appointment-list', compact('appointments'));
+            return view('dashboard.appointments.index', compact('appointments'));
         } else {
-            $userId=Auth::user()->id;
-            $appointments = Appointment::where('user_id',$userId)->get();
+            $userId = Auth::user()->id;
+            $appointments = Appointment::where('user_id', $userId)->get();
             return view('user.view-appointments', compact('appointments'));
         }
     }
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $doctors=Doctor::where('speciality_id',$request->speciality_id)->get();
-        $doctor=$doctors->random();
-        $appointment = Appointment::create($request->all() + ['user_id' => Auth::user()->id , 'doctor_id' => $doctor->id]);
+        $doctors = Doctor::where('speciality_id', $request->speciality_id)->get();
+        $doctor = $doctors->random();
+        $appointment = Appointment::create($request->all() + ['user_id' => Auth::user()->id, 'doctor_id' => $doctor->id]);
         if ($appointment->save) {
+            $users = User::all();
+            // User::all()->notify(new NotificationsAppointment($appointment));
+            Notification::send($users, new NotificationsAppointment($appointment));
             return redirect()->route('home')->with('success', 'Appointment successfuly');
         } else
             return back()->with('error', 'There is something wrong , try again please');
@@ -74,9 +76,9 @@ class AppointmentController extends Controller
      */
     public function destroy(Appointment $appointment)
     {
-        if($appointment->delete())
-        return back()->with('success','Appointment canceled successfuly');
-        else 
-        return back()->with('error','Error in canceled appointment');
+        if ($appointment->delete())
+            return back()->with('success', 'Appointment canceled successfuly');
+        else
+            return back()->with('error', 'Error in canceled appointment');
     }
 }

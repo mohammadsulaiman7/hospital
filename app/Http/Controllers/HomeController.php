@@ -20,7 +20,6 @@ class HomeController extends Controller
     {
         // $doctors = Doctor::all();
         // $specialities = Speciality::all();
-
         // return view('user.home', compact('doctors', 'specialities','times'));
         if (Auth::user()->usertype == '0') {
             $doctors = Doctor::get();
@@ -37,7 +36,7 @@ class HomeController extends Controller
             $users = User::paginate(5);
             $appointments = Appointment::paginate(10);
             $specialities = Speciality::with('appointments')->paginate(10);
-            return view('admin.home', compact('users', 'appointments','specialities','doctors'));
+            return view('dashboard.home', compact('users', 'appointments','specialities','doctors'));
         }
     }
     public function getValues($selectedValue)

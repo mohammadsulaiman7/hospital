@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateAdmin::class);
         // User::factory(40)->create();
         $this->call(CreateSpecialitySeeder::class);
-        $this->call(CreateDoctorSeeder::class);
+        // $this->call(CreateDoctorSeeder::class);
         // $this->call(CreateAppointmentSeeder::class);
     }
 }

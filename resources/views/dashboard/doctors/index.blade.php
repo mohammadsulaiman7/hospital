@@ -26,7 +26,7 @@
                     <td>{{$doctor->name}}</td>
                   <td>{{$doctor->phone}}</td>
                   <td>{{$doctor->room_no}}</td>
-                  <td>{{$doctor->created_at}}</td>
+                  <td>{{$doctor->age}}</td>
                   <td>{{$doctor->speciality->name}}</td>
                 </tr>
                 @endforeach

@@ -20,7 +20,7 @@ class SpecialityController extends Controller
      */
     public function create()
     {
-        return view('admin.add-speciality');
+        return view('dashboard.specialities.create');
     }
 
     /**

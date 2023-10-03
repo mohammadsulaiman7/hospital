@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('dashboard.layout')
 @section('title', 'Add speciality')
 @section('content')
     <div class="container-fluid page-body-wrapper">
