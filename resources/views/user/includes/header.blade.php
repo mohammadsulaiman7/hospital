@@ -41,7 +41,7 @@
                 aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupport">
+            <div class="collapse navbar-collapse w-100" id="navbarSupport">
                 <ul class="navbar-nav ml-auto" id="navMenu">
                     <li class="nav-item ">
                         <a class="nav-link" href="{{ route('home') }}">Home</a>

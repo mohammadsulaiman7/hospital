@@ -21,21 +21,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
-//     Route::get('/', [HomeController::class, 'index'])->name('home');
-//     Route::resource('doctors', DoctorController::class);
-//     Route::resource('specialities',SpecialityController::class);
-//     Route::resource('appointments',AppointmentController::class);
-//     Route::resource('news',NewsController::class);
-//     Route::resource('categories',CategoryController::class);
-//     Route::get('edit/{doctor}',[DoctorController::class,'edit'])->name('doctors.edit');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::resource('doctors', DoctorController::class);
+    Route::resource('specialities',SpecialityController::class);
+    Route::resource('appointments',AppointmentController::class);
+    Route::resource('news',NewsController::class);
+    Route::resource('categories',CategoryController::class);
+    Route::get('edit/{doctor}',[DoctorController::class,'edit'])->name('doctors.edit');
+    Route::get('settings/{user}',function($user){
+        return view('dashboard.settings',compact('user'));
+    })->name('settings');
     // Route::get('/get-values/{selectedValue}',[HomeController::class,'getValue']);
 
     // Route::post('create-admin',[AdminController::class,'create'])->name('create-admin');

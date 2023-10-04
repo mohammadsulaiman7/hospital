@@ -52,14 +52,14 @@
                 <div class="card-blog">
                   <div class="header">
                     <div class="post-category">
-                      <a href="#">{{$news->category->name}}</a>
+                      <a href="{{route('categories.show',$news->category)}}">{{$news->category->name}}</a>
                     </div>
                     <a href="blog-details" class="post-thumb">
                       <img src="{{asset('storage/covers/'.$news->cover)}}" alt="">
                     </a>
                   </div>
                   <div class="body">
-                    <h5 class="post-title"><a href="blog-details.html">{{Str::limit($news->title,30)}}</a></h5>
+                    <h5 class="post-title"><a href="{{route('news.show',$news)}}">{{Str::limit($news->title,30)}}</a></h5>
                     <div class="site-info">
                       <div class="avatar mr-2">
                         <div class="avatar-img">

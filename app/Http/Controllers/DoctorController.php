@@ -15,17 +15,19 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $specialities=Speciality::all();
-        return view('dashboard.doctors.create', compact('specialities'));
+        $doctors = Doctor::all();
+        return view('dashboard.doctors.index', compact('doctors'));
+        // $specialities = Speciality::all();
+        // return view('dashboard.doctors.create', compact('specialities'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $specialities=Speciality::all();
-        return view('dashboard.doctors.create',compact('specialities'));
+        $specialities = Speciality::all();
+        return view('dashboard.doctors.create', compact('specialities'));
     }
 
     /**
@@ -34,19 +36,17 @@ class DoctorController extends Controller
 
     public function store(Request $request)
     {
-        $doctor =Doctor::create($request->all() + ['user_id' => '1']);
-        if($request->hasFile('image'))
-        {
-            $image=$request->file('image');
-            $imageName=time() . '.' .$image->extension();
-            $image->storeAs('public/doctors',$imageName);
-            $doctor->image=$imageName;
+        $doctor = Doctor::create($request->all() + ['user_id' => '1']);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->extension();
+            $image->storeAs('public/doctors', $imageName);
+            $doctor->image = $imageName;
         }
         if ($doctor->save()) {
-            return redirect()->route('home')->with('success','Adding doctor successfuly');
-        }
-        else
-        return back()->with('error','error in adding doctor');
+            return redirect()->route('home')->with('success', 'Adding doctor successfuly');
+        } else
+            return back()->with('error', 'error in adding doctor');
     }
 
     /**
@@ -54,7 +54,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        // return view('dashboard.doctors.show');
     }
 
     /**
@@ -62,7 +62,8 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        //
+        $specialities = Speciality::all();
+        return view('dashboard.doctors.edit', compact('doctor','specialities'));
     }
 
     /**
@@ -70,7 +71,6 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //
     }
 
     /**
